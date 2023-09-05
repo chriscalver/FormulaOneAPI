@@ -10,7 +10,7 @@ console.log(Monday);
 
 async function getRaces() {
 
-    const driverEndpoint = new URL("http://ergast.com/api/f1/2023/last/driverStandings.json");
+    const driverEndpoint = new URL("http://ergast.com/api/f1/current/driverStandings.json");
     const driverResponse = await fetch(driverEndpoint);
     const driverData = await driverResponse.json();
     console.log(driverData);
@@ -22,6 +22,11 @@ async function getRaces() {
     const constData = await constResponse.json();
     console.log(constData);
 
+
+    const lastRaceEndpoint = new URL("http://ergast.com/api/f1/current/last/results.json");
+    const lastRaceResponse = await fetch(lastRaceEndpoint);
+    const lastRaceData = await lastRaceResponse.json();
+    console.log(lastRaceData);
 
 
     const Pos1 = driverData.MRData.StandingsTable.StandingsLists[0].DriverStandings[0].Driver.familyName; 
@@ -119,6 +124,40 @@ async function getRaces() {
     document.getElementById("constpts8").innerHTML = constPts8;
     document.getElementById("constpts9").innerHTML = constPts9;
     document.getElementById("constpts10").innerHTML = constPts10;
+
+
+
+
+
+    const RaceNumber = lastRaceData.MRData.RaceTable.Races[0].round;
+    const NextRaceNumber = Number(RaceNumber) + 1;    
+
+    const LastRaceName = lastRaceData.MRData.RaceTable.Races[0].raceName;
+    const LastRacePos1 = lastRaceData.MRData.RaceTable.Races[0].Results[0].Driver.familyName; 
+    const LastRacePos2 = lastRaceData.MRData.RaceTable.Races[0].Results[1].Driver.familyName; 
+    const LastRacePos3 = lastRaceData.MRData.RaceTable.Races[0].Results[2].Driver.familyName; 
+   
+    document.getElementById("lastRaceName").innerHTML = LastRaceName;
+    
+    document.getElementById("lastRacePos1").innerHTML = LastRacePos1;
+    document.getElementById("lastRacePos2").innerHTML = LastRacePos2;
+    document.getElementById("lastRacePos3").innerHTML = LastRacePos3;
+    
+
+
+
+
+    const RaceEndpoint = new URL("http://ergast.com/api/f1/2023/15.json");
+    const RaceResponse = await fetch(RaceEndpoint);
+    const RaceData = await RaceResponse.json();
+    console.log(RaceData);
+
+    const NextRaceName = RaceData.MRData.RaceTable.Races[0].raceName;
+    const NextRaceDate = RaceData.MRData.RaceTable.Races[0].date;
+
+    document.getElementById("NextRaceName").innerHTML = NextRaceName;
+    document.getElementById("NextRaceDate").innerHTML = NextRaceDate;
+    
 
 
 

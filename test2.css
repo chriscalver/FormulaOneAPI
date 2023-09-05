@@ -78,7 +78,7 @@ header {
 .content_nav li {
 
     display: inline-block;
-    padding-right: 10px;
+    padding-right: 5px;
 
 }
 
@@ -131,7 +131,7 @@ header {
         padding: 0;
         box-sizing: border-box;
         font-family: 'Michroma';
-        font-size: 12px;
+        font-size: 11px;
         background-color: #FFFFFF;
     }
 
@@ -203,7 +203,7 @@ header {
 .item {
     background: #FFFFFF;
     color: #090224;
-    font-size: 12px;
+    font-size: 14px;
     padding: 5px;
     border: skyblue 0px solid;
     text-align: center;
@@ -212,6 +212,43 @@ header {
 }
 
 
+.subheader {
+    font-weight:bolder;
+    font-size: 16px;
+}
+
+.subheader2 {
+    font-weight:bolder;
+    font-size: 16px;
+}
+
+.link {
+    font-weight:bolder;
+    font-size: 12px;
+    color: #330dca;
+
+
+
+}
+
+a2:link {
+    color: red;
+  }
+  
+  /* visited link */
+  a2:visited {
+    color: red;
+  }
+  
+  /* mouse over link */
+  a2:hover {
+    color: rgb(234, 149, 12);
+  }
+  
+  /* selected link */
+  a2:active {
+    color: blue;
+  }
 
 .header {
 
@@ -220,12 +257,23 @@ header {
     border: 0px solid #3a921c;
     padding: 0px 0px 0px 0px;
     margin: 0px 0px 0px 0px;
-    font-size:28px;
+    font-size: 32px;
     font-weight: 500;
     font-family: 'Racing Sans One', cursive;
     
 }
+.header2 {
 
+    justify-content: center;    
+    /* text-align: right; */
+    border: 0px solid #3a921c;
+    padding: 0px 0px 0px 0px;
+    margin: 0px 0px 0px 0px;
+    font-size: 28px;
+    font-weight: 500;
+    font-family: 'Racing Sans One', cursive;
+    
+}
 
 .item-1 {
     grid-area: myArea1;
@@ -249,6 +297,11 @@ header {
 
 .item-4 {
     grid-area: myArea4;
+    vertical-align: middle;
+
+
+
+
 }
 
 .item-5 {
@@ -268,19 +321,14 @@ header {
 .list {
     text-align: left;
     width: 70%;
-    border: 1px solid #3a921c;
+    border: 0px solid #3a921c;
 }
 
-
-
-
-
-
-
-
-
-
-
+.f1logomain {
+    width: 250px;
+    padding: 10px 0px 0px 0px;
+    margin: 0px 0px 0px 0px;
+}
 
 
 
@@ -288,7 +336,7 @@ header {
 
 .content_section {
     width: 100%;
-    background-color: #E10600;
+    background-color: #ffffff;
     margin: auto;
 
 }
@@ -306,8 +354,8 @@ header {
         'myArea4 myArea4 myArea4'
         'myArea5 myArea5 myArea5';
 
-    grid-template-rows: 250px 200px 200px;
-    grid-template-columns: 2.5fr 1fr 2.5fr;
+    grid-template-rows: 270px 160px 200px;
+    grid-template-columns: 2.5fr 1.5fr 2.5fr;
 }
 
 
@@ -315,7 +363,86 @@ header {
 
 
 
+@media screen and (max-width: 950px) {
+    .item {
+        background: #FFFFFF;
+        color: #090224;
+        font-size: 10px;
+        padding: 5px;
+        /* border: skyblue 0px solid; */
+        text-align: center;
+        font-family: 'Michroma';
+    
+    }
+    
+    .link {
+        font-weight:bolder;
+        font-size: 10px;
+        color: #330dca;
+    
+    
+    
+    }
 
+
+    
+.header {
+
+    justify-content: center;    
+    /* text-align: right; */
+    border: 0px solid #3a921c;
+    padding: 0px 0px 0px 0px;
+    margin: 0px 0px 0px 0px;
+    font-size: 20px;
+    font-weight: 500;
+    font-family: 'Racing Sans One', cursive;
+    
+}
+
+.header2 {
+
+    justify-content: center;    
+    /* text-align: right; */
+    border: 0px solid #3a921c;
+    padding: 0px 0px 0px 0px;
+    margin: 0px 0px 0px 0px;
+    font-size: 20px;
+    font-weight: 500;
+    font-family: 'Racing Sans One', cursive;
+    
+}
+    
+.f1logomain {
+    width: 165px;
+}
+.subheader {
+    font-weight:bolder;
+    font-size: 16px;
+}
+.subheader2 {
+    font-weight:bolder;
+    font-size: 12px;
+}
+
+
+.container2 {
+
+    width: 90%;
+    /* margin: 0px; */
+    height: 100vh;
+    margin: auto;
+
+    display: grid;
+    grid-template-areas:
+        'myArea1 myArea2 myArea3'
+        'myArea4 myArea4 myArea4'
+        'myArea5 myArea5 myArea5';
+
+    grid-template-rows: 200px 120px 200px;
+    grid-template-columns: 1fr 0.5fr 1fr;
+}
+
+}
 
 
 
@@ -332,16 +459,72 @@ header {
         /* margin: auto; */
 
         display: grid;
-        grid-template-rows: 135px 205px 250px 155px 120px;
+        grid-template-rows: 65px 110px 65px 195px 120px;
         grid-template-columns: 1fr;
         grid-template-areas:
-            'myArea2 myArea2'            
+            'myArea2 myArea2' 
+            'myArea4 myArea4' 
+            'myArea5 myArea5'          
             'myArea1 myArea1'
-            'myArea3 myArea3'
-            'myArea4 myArea4'
-            'myArea5 myArea5';
+            'myArea3 myArea3';
 
 
+    }
+
+    .link {
+        font-weight:bolder;
+        font-size: 9px;
+        color: #330dca;
+    
+    
+    
+    }
+    .subheader {
+        font-weight:bolder;
+        font-size: 11px;
+    }
+
+    .subheader2 {
+        font-weight:bolder;
+        font-size: 9px;
+    }
+    .header {
+
+        justify-content: center;    
+        /* text-align: right; */
+        border: 0px solid #3a921c;
+        padding: 0px 0px 0px 0px;
+        margin: 0px 0px 0px 0px;
+        font-size:18px;
+        font-weight: 500;
+        font-family: 'Racing Sans One', cursive;
+        
+    }
+    .header2 {
+
+        justify-content: center;    
+        /* text-align: right; */
+        border: 0px solid #3a921c;
+        padding: 0px 0px 0px 0px;
+        margin: 0px 0px 0px 0px;
+        font-size:18px;
+        font-weight: 500;
+        font-family: 'Racing Sans One', cursive;
+        
+    }
+    
+    .item {
+        background: #FFFFFF;
+        color: #090224;
+        font-size: 10px;
+        padding: 5px;
+        border: skyblue 0px solid;
+        text-align: center;
+        font-family: 'Michroma';
+    
+    }
+    .f1logomain {
+        width: 50px;
     }
 
     .item-1 {
