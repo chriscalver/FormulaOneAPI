@@ -147,7 +147,7 @@ async function getRaces() {
 
 
 
-    const RaceEndpoint = new URL("http://ergast.com/api/f1/2023/15.json");
+    const RaceEndpoint = new URL(`http://ergast.com/api/f1/2023/${NextRaceNumber}.json`);
     const RaceResponse = await fetch(RaceEndpoint);
     const RaceData = await RaceResponse.json();
     console.log(RaceData);
