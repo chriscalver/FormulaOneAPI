@@ -6,8 +6,6 @@ let Monday = myEpoch.toFixed();
 console.log(Monday);
 
 
-
-
 async function getRaces() {
 
     const driverEndpoint = new URL("http://ergast.com/api/f1/current/driverStandings.json");
@@ -74,10 +72,6 @@ async function getRaces() {
     document.getElementById("pts9").innerHTML = Pts9;
     document.getElementById("pts10").innerHTML = Pts10;
 
-    
-
-
-
 
 
     const constPos1 = constData.MRData.StandingsTable.StandingsLists[0].ConstructorStandings[0].Constructor.name; 
@@ -127,8 +121,6 @@ async function getRaces() {
 
 
 
-
-
     const RaceNumber = lastRaceData.MRData.RaceTable.Races[0].round;
     const NextRaceNumber = Number(RaceNumber) + 1;    
 
@@ -145,8 +137,6 @@ async function getRaces() {
     
 
 
-
-
     const RaceEndpoint = new URL(`http://ergast.com/api/f1/2023/${NextRaceNumber}.json`);
     const RaceResponse = await fetch(RaceEndpoint);
     const RaceData = await RaceResponse.json();
@@ -157,9 +147,6 @@ async function getRaces() {
 
     document.getElementById("NextRaceName").innerHTML = NextRaceName;
     document.getElementById("NextRaceDate").innerHTML = NextRaceDate;
-    
-
-
 
 
 }

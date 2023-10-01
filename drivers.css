@@ -196,6 +196,14 @@ header {
 
 
 
+
+
+
+
+
+
+
+
 /* Main Area Layout */
 
 
@@ -358,7 +366,7 @@ a:link {
         'myArea5 myArea5 myArea5';
 
     grid-template-rows: 570px 160px 200px;
-    grid-template-columns: 2.5fr 1.5fr 2.5fr;
+    grid-template-columns: 2.0fr 2.0fr 2.0fr;
 }
 
 
@@ -441,8 +449,8 @@ a:link {
         'myArea4 myArea4 myArea4'
         'myArea5 myArea5 myArea5';
 
-    grid-template-rows: 200px 120px 200px;
-    grid-template-columns: 1fr 0.5fr 1fr;
+    grid-template-rows: 500px 120px 200px;
+    grid-template-columns: 1fr 2.5fr 1fr;
 }
 
 }
@@ -462,7 +470,7 @@ a:link {
         /* margin: auto; */
 
         display: grid;
-        grid-template-rows: 65px 110px 65px 195px 120px;
+        grid-template-rows: 505px 110px 65px 195px 120px;
         grid-template-columns: 1fr;
         grid-template-areas:
             'myArea2 myArea2' 

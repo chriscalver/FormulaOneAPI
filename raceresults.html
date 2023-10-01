@@ -5,12 +5,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="test2.css?version=6"> 
+    <link rel="stylesheet" href="drivers.css"> 
     <link href='https://fonts.googleapis.com/css?family=Faster One' rel='stylesheet'>
     <link href='https://fonts.googleapis.com/css?family=Michroma' rel='stylesheet'>
     <link href='https://fonts.googleapis.com/css?family=Racing Sans One' rel='stylesheet'>
     <!-- https://fonts.googleapis.com/css?family=Open+Sans:400,700 -->
-    <script src="f1.js" type="module"></script>
+    <script src="raceresults.js" type="module"></script>
     <title>F1 Racing API</title>
 </head>
 
@@ -20,8 +20,8 @@
             <nav class="nav_checkbox">
                 <img src="f1logo.jpg" class="stravalogo" width="90">
                 
-                    <h2 class="logo">Racing API</h2>
-                
+                <h2 class="logo">Racing API</h2>
+            
                 <input type="checkbox" id="tab-nav" class="tab-nav">
                 <label for="tab-nav" class="label">
                     <div class="burger"></div>
@@ -52,28 +52,44 @@
 
 
             <div class="item item-1">
-                <div class="header">
-                    <span id="">Drivers</span>
-                </div>
-                <div><span>1 - </span><span id="pos1"></span><span> - </span><span id="pts1"></span></div>
-                <div><span>2 - </span><span id="pos2"></span><span> - </span><span id="pts2"></span></div>
-                <div><span>3 - </span><span id="pos3"></span><span> - </span><span id="pts3"></span></div>
-                <div><span>4 - </span><span id="pos4"></span><span> - </span><span id="pts4"></span></div>
-                <div><span>5 - </span><span id="pos5"></span><span> - </span><span id="pts5"></span></div>
-                <div><span>6 - </span><span id="pos6"></span><span> - </span><span id="pts6"></span></div>
-                <div><span>7 - </span><span id="pos7"></span><span> - </span><span id="pts7"></span></div>
-                <div><span>8 - </span><span id="pos8"></span><span> - </span><span id="pts8"></span></div>
-                <div><span>9 - </span><span id="pos9"></span><span> - </span><span id="pts9"></span></div>
-                <div><span>10 - </span><span id="pos10"></span><span> - </span><span id="pts10"></span></div>
                
-                <div class="link">
-                    <a href="drivers.html" class=""> <span id="">View Full Lederboard</span></a>
-                </div>
             </div>
 
             <div class="item item-2">
 
-                <div>
+                <div class="header2">
+                    <span id="">Lastest Race Results</span>
+                </div>
+                <div class="subheader2"><span></span><span id="lastRaceName"></span><span>  </span><span id=""></span></div>
+               
+                <div><span>1 - </span><span id="lastRacePos1"></span><span>  </span><span id="lastRacePts1"></span></div>
+                <div><span>2 - </span><span id="lastRacePos2"></span><span>  </span><span id=""></span></div>
+                <div><span>3 - </span><span id="lastRacePos3"></span><span>  </span><span id=""></span></div>
+                <div><span>4 - </span><span id="lastRacePos4"></span><span>  </span><span id=""></span></div>
+                <div><span>5 - </span><span id="lastRacePos5"></span><span>  </span><span id=""></span></div>
+                <div><span>6 - </span><span id="lastRacePos6"></span><span>  </span><span id=""></span></div>
+                <div><span>7 - </span><span id="lastRacePos7"></span><span>  </span><span id=""></span></div>
+                <div><span>8 - </span><span id="lastRacePos8"></span><span>  </span><span id=""></span></div>
+                <div><span>9 - </span><span id="lastRacePos9"></span><span>  </span><span id=""></span></div>
+                <div><span>10 - </span><span id="lastRacePos10"></span><span>  </span><span id=""></span></div>
+                <div><span>11 - </span><span id="lastRacePos11"></span><span>  </span><span id=""></span></div>
+                <div><span>12 - </span><span id="lastRacePos12"></span><span>  </span><span id=""></span></div>
+                <div><span>13 - </span><span id="lastRacePos13"></span><span>  </span><span id=""></span></div>
+                <div><span>14 - </span><span id="lastRacePos14"></span><span>  </span><span id=""></span></div>
+                <div><span>15 - </span><span id="lastRacePos15"></span><span>  </span><span id=""></span></div>
+                <div><span>16 - </span><span id="lastRacePos16"></span><span>  </span><span id=""></span></div>
+                <div><span>17 - </span><span id="lastRacePos17"></span><span>  </span><span id=""></span></div>
+                <div><span>18 - </span><span id="lastRacePos18"></span><span>  </span><span id=""></span></div>
+                <div><span>19 - </span><span id="lastRacePos19"></span><span>  </span><span id=""></span></div>
+                <div><span>20 - </span><span id="lastRacePos20"></span><span>  </span><span id=""></span></div>
+
+                
+                <script>
+                    document.write('<a href="' + document.referrer + '">Go Back</a>');
+                </script>
+
+
+                <!-- <div>
                     <span id="">
                         <img src="checker.png" class="f1logomain">
 
@@ -81,14 +97,14 @@
                 </div>
                 <div>
                     <span id=""></span>
-                </div>
+                </div> -->
             </div>
 
 
 
             <div class="item item-3">
 
-                <div class="header">
+                <!-- <div class="header">
                     <span id="">Constructors</span>
                 </div>
                 <div><span>1 - </span><span id="constpos1"></span><span> - </span><span id="constpts1"></span></div>
@@ -103,8 +119,8 @@
                 <div><span>10 - </span><span id="constpos10"></span><span> - </span><span id="constpts10"></span></div>
 
                 <div class="link">
-                    <a href="constructors.html" class=""> <span id="">View More Details</span></a>
-                </div>
+                    <a2 href="#" class=""> <span id="">View Full Lederboard</span></a>
+                </div> -->
             </div>
 
 
@@ -114,7 +130,7 @@
             <div class="item item-4">
                 
 
-                <div class="header2">
+                <!-- <div class="header2">
                     <span id="">Lastest Race Podium</span>
                 </div>
                 <div class="subheader2"><span></span><span id="lastRaceName"></span><span>  </span><span id=""></span></div>
@@ -124,8 +140,8 @@
                 <div><span>3 - </span><span id="lastRacePos3"></span><span>  </span><span id=""></span></div>
                
                 <div class="link">
-                    <a href="raceresults.html" class=""> <span id="">View Full Lederboard</span></a>
-                </div>
+                    <a2 href="#" class=""> <span id="">View Full Lederboard</span></a>
+                </div> -->
 
             </div>
 
@@ -135,7 +151,7 @@
             <div class="item item-5">
 
 
-
+<!-- 
                 <div class="header2">
                     <span id="">Next Grand Prix</span>
                 </div>
@@ -145,7 +161,7 @@
                 <div class="">  <span class="" id="NextRaceDate"></span></div>
                 <div class="link">
                     <a2 href="#" class=""> <span id="">View Weekend Schedule</span></a>
-                </div>
+                </div> -->
 
 
             </div>
