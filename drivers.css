@@ -222,7 +222,8 @@ header {
 
 .subheader {
     font-weight:bolder;
-    font-size: 16px;
+    font-size: 13px;
+    /* text-align: left; */
 }
 
 .subheader2 {
@@ -336,7 +337,7 @@ a:link {
 }
 
 .f1logomain {
-    width: 250px;
+    width: 80px;
     padding: 10px 0px 0px 0px;
     margin: 0px 0px 0px 0px;
 }
