@@ -141,14 +141,14 @@ async function getRaces() {
     const RaceResponse = await fetch(RaceEndpoint);
     const RaceData = await RaceResponse.json();
     console.log(RaceData);
-
+    
     const NextRaceName = RaceData.MRData.RaceTable.Races[0].raceName;
     const NextRaceDate = RaceData.MRData.RaceTable.Races[0].date;
-
+    
     document.getElementById("NextRaceName").innerHTML = NextRaceName;
+    
     document.getElementById("NextRaceDate").innerHTML = NextRaceDate;
-
-
+    
 }
 
 getRaces()
