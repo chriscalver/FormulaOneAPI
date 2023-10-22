@@ -357,7 +357,7 @@ a:link {
         'myArea4 myArea4 myArea4'
         'myArea5 myArea5 myArea5';
 
-    grid-template-rows: 270px 160px 200px;
+    grid-template-rows: 270px 150px 200px;
     grid-template-columns: 2.5fr 1.5fr 2.5fr;
 }
 
