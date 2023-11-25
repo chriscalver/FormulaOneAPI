@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+  </head>
+  <body>
+    <script>
+      function setup() {
+        createCanvas(400, 400); // Create a canvas
+      }
+
+      function draw() {
+        background(220); // Set the background color to light gray
+
+        // Calculate the position and dimensions of the box
+        let boxX = width / 2 - 100; // Center the box horizontally
+        let boxY = height / 2 - 50; // Center the box vertically
+        let boxWidth = 200;
+        let boxHeight = 100;
+
+        // Draw a box in the middle of the canvas
+        fill(255); // Set the fill color to white
+        rect(boxX, boxY, boxWidth, boxHeight);
+
+        // Set text properties
+        textSize(32);
+        fill(0); // Set the fill color to black
+        textAlign(CENTER, CENTER);
+
+        // Display "Hello, World!" inside the box
+        text("Hello, World!", width / 2, height / 2);
+      }
+    </script>
+  </body>
+</html>

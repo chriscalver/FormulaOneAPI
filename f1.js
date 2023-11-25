@@ -126,9 +126,9 @@ async function getRaces() {
     const NextRaceNumber = Number(RaceNumber) + 1;
 
 
-    // var favoritemovie = "Shrek";
+    
     sessionStorage.setItem("NextRace", NextRaceNumber);
-
+    console.log(NextRaceNumber);
 
     const LastRaceName = lastRaceData.MRData.RaceTable.Races[0].raceName;
     const LastRacePos1 = lastRaceData.MRData.RaceTable.Races[0].Results[0].Driver.familyName;
