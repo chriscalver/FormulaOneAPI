@@ -1,5 +1,5 @@
 var date = new Date();
-console.log(date);
+//console.log(date);
 
 var myEpoch = date.getTime() / 1000.0;
 let Monday = myEpoch.toFixed();
@@ -217,7 +217,7 @@ async function getRaces() {
   document.getElementById("lastRacePos3").innerHTML = LastRacePos3;
 
   const RaceEndpoint = new URL(
-    `https://ergast.com/api/f1/2023/${NextRaceNumber}.json`
+    `https://ergast.com/api/f1/2024/${NextRaceNumber}.json`
   );
   const RaceResponse = await fetch(RaceEndpoint);
   const RaceData = await RaceResponse.json();
@@ -225,6 +225,7 @@ async function getRaces() {
 
   const NextRaceName = RaceData.MRData.RaceTable.Races[0].raceName;
   // const NextRaceDate = RaceData.MRData.RaceTable.Races[0].date;
+  console.log("------------------" + NextRaceName);
 
   document.getElementById("NextRaceName").innerHTML = NextRaceName;
 

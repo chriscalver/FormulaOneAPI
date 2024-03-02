@@ -1,26 +1,38 @@
 var Next = sessionStorage.getItem("NextRace");
 //var Next = 18;
 var SprintWeekend;
-console.log(Next);
+//console.log(Next);
+var m = "";
 
 async function getRaces() {
   const lastRaceEndpoint = new URL(
-    `http://ergast.com/api/f1/2023/${Next}.json`
+    `http://ergast.com/api/f1/2024/1.json`
+
+    // `http://ergast.com/api/f1/2023/${Next}.json`
   );
   const lastRaceResponse = await fetch(lastRaceEndpoint);
   const lastRaceData = await lastRaceResponse.json();
 
-  console.log(lastRaceData);
+  //console.log(lastRaceData);
 
   function timetrimFunction(t) {
+    console.log(t);
     var t2 = t.slice(0, -7); // isolates hour
+    console.log(t2);
+
     var t3 = t.slice(3, -4); // isolates mins
+    t2 = t2 - 5;
+    console.log(t2);
 
     if (t2 > 12) {
       //converts to 12 hr time
       t2 = t2 - 12;
+      m = "pm";
+    } else {
+      m = "am";
     }
-    t2 = t2 - 4;
+    console.log(t2);
+    console.log(m);
 
     t2 = t2 + ":" + t3;
     return t2;
@@ -35,12 +47,12 @@ async function getRaces() {
   try {
     const test = lastRaceData.MRData.RaceTable.Races[0].Sprint.date; // testing for sprint weekend
     SprintWeekend = true;
-    console.log(SprintWeekend);
+    // console.log(SprintWeekend);
   } catch (err) {
     SprintWeekend = false;
-    console.log(SprintWeekend);
+    //console.log(SprintWeekend);
     // error handling
-    console.log(err);
+    // console.log(err);
   }
 
   if (SprintWeekend) {
@@ -54,6 +66,7 @@ async function getRaces() {
       lastRaceData.MRData.RaceTable.Races[0].FirstPractice.date;
     document.getElementById("eventOneDate").innerHTML =
       dateTrimFunction(eventOneDate);
+
     var eventOneTime =
       lastRaceData.MRData.RaceTable.Races[0].FirstPractice.time;
     document.getElementById("eventOneTime").innerHTML =
@@ -99,10 +112,15 @@ async function getRaces() {
       lastRaceData.MRData.RaceTable.Races[0].FirstPractice.date;
     document.getElementById("eventOneDate").innerHTML =
       dateTrimFunction(eventOneDate);
+    // console.log("***************" + eventOneDate);
     var eventOneTime =
       lastRaceData.MRData.RaceTable.Races[0].FirstPractice.time;
+    // document.getElementById("eventOneTime").innerHTML =
+    //   timetrimFunction(eventOneTime) + "pm";
+
     document.getElementById("eventOneTime").innerHTML =
-      timetrimFunction(eventOneTime) + "pm";
+      timetrimFunction(eventOneTime) + " " + m;
+    console.log("*****" + timetrimFunction(eventOneTime));
 
     const eventTwoDate =
       lastRaceData.MRData.RaceTable.Races[0].SecondPractice.date;
@@ -111,7 +129,8 @@ async function getRaces() {
     var eventTwoTime =
       lastRaceData.MRData.RaceTable.Races[0].SecondPractice.time;
     document.getElementById("eventTwoTime").innerHTML =
-      timetrimFunction(eventTwoTime) + "pm";
+      timetrimFunction(eventTwoTime) + " " + m;
+    //   console.log("*****" + eventTwoTime);
 
     const eventThreeDate =
       lastRaceData.MRData.RaceTable.Races[0].ThirdPractice.date;
@@ -120,7 +139,9 @@ async function getRaces() {
     var eventThreeTime =
       lastRaceData.MRData.RaceTable.Races[0].ThirdPractice.time;
     document.getElementById("eventThreeTime").innerHTML =
-      timetrimFunction(eventThreeTime) + "pm";
+      timetrimFunction(eventThreeTime) + " " + m;
+
+    //  console.log("*****" + eventThreeTime);
 
     const eventFourDate =
       lastRaceData.MRData.RaceTable.Races[0].Qualifying.date;
@@ -128,38 +149,24 @@ async function getRaces() {
       dateTrimFunction(eventFourDate);
     var eventFourTime = lastRaceData.MRData.RaceTable.Races[0].Qualifying.time;
     document.getElementById("eventFourTime").innerHTML =
-      timetrimFunction(eventFourTime) + "pm";
+      timetrimFunction(eventFourTime) + " " + m;
+
+    //  console.log("*****" + eventFourTime);
 
     const eventFiveDate = lastRaceData.MRData.RaceTable.Races[0].date;
     document.getElementById("eventFiveDate").innerHTML =
       dateTrimFunction(eventFiveDate);
     var eventFiveTime = lastRaceData.MRData.RaceTable.Races[0].time;
     document.getElementById("eventFiveTime").innerHTML =
-      timetrimFunction(eventFiveTime) + "pm";
+      timetrimFunction(eventFiveTime) + " " + m;
   }
-
-  // document.getElementById("test").innerHTML = test;
-  // const test = lastRaceData.MRData.RaceTable.Races[0].SecondPractice.date;
-  // document.getElementById("test").innerHTML = test;
-
-  // const RaceName = lastRaceData.MRData.RaceTable.Races[0].raceName;
-  // document.getElementById("RaceName").innerHTML = RaceName;
-
-  // const P1 = lastRaceData.MRData.RaceTable.Races[0].FirstPractice.date;
-  // var P1time = lastRaceData.MRData.RaceTable.Races[0].FirstPractice.time;
-  // document.getElementById("p1date").innerHTML = P1;
-  // document.getElementById("p1time").innerHTML = timetrimFunction(P1time) + "pm";
-
-  // const time = lastRaceData.MRData.RaceTable.Races[0].time;
-  // const newtime = timetrimFunction(time);
-  // document.getElementById("NextRaceName").innerHTML = newtime;
 }
 
 getRaces()
   .then((response) => {
-    console.log("races ok");
+    //    console.log("races ok");
   })
   .catch((error) => {
     console.log("races NOT ok");
-    console.error(error);
+    //   console.error(error);
   });
